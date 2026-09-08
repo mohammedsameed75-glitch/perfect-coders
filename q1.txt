@@ -1,0 +1,4 @@
+r=int(input("enter a number"))
+a=3.14
+area=a*r*r
+print("area of a circle",area)

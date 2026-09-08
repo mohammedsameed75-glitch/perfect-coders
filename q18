@@ -1,0 +1,6 @@
+chact = input("Enter a character:")
+
+if chact in "aeiouAEIOU":
+    print("Vowel")
+else:
+    print("Consonant")

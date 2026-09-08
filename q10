@@ -1,0 +1,7 @@
+p = float(input("enter a number for principal: "))
+r = float(input("enter a number for rate : "))
+t = float(input("enter number for time: "))
+
+si = (p*r*t) / 100
+
+print("simple interest =", si)

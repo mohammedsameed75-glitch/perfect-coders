@@ -1,0 +1,5 @@
+n=int(input("enter a number:"))
+if n %3==0 & n%5==0:
+    print("n is divisible by both 3&4")
+else:
+    print("n is not divisible by both 3&4")

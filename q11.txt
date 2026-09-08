@@ -1,0 +1,10 @@
+chact = input("Enter a character: ")
+
+if chact.isupper():
+    print("Uppercase")
+elif chact.islower():
+    print("Lowercase")
+elif chact.isdigit():
+    print("Digit")
+else:
+    print("Special character")

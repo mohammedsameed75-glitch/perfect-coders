@@ -1,0 +1,8 @@
+a=int(input("enter a number n:"))
+b=int(input("enter a number n1:"))
+c= int(input("enter a number n2:"))
+if a==b&b==c:
+    print("all three numbers are equal")
+else:
+    print("all three numbers are not equal")
+    
