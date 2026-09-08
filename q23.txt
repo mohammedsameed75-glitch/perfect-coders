@@ -1,0 +1,7 @@
+username = input("Enter username:")
+password = input("Enter password:")
+
+if username == "sameed" and password == "2233":
+    print("Login successful")
+else:
+    print("Invalid username or password")
