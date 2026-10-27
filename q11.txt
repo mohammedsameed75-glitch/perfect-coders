@@ -1,10 +1,32 @@
-chact = input("Enter a character: ")
-
-if chact.isupper():
-    print("Uppercase")
-elif chact.islower():
-    print("Lowercase")
-elif chact.isdigit():
-    print("Digit")
-else:
-    print("Special character")
+def first_occurrence(arr, target):
+    left = 0
+    right = len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            result = mid
+            right = mid - 1
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+def last_occurrence(arr, target):
+    left = 0
+    right = len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            result = mid
+            left = mid + 1
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+arr = list(map(int, input("Enter sorted array elements: ").split()))
+target = int(input("Enter target: "))
+print("First occurrence:", first_occurrence(arr, target))
+print("Last occurrence:", last_occurrence(arr, target))

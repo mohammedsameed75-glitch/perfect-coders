@@ -1,7 +1,9 @@
-a=int(input("enter a number:"))
-b=int(input("enter a number:"))
-print("sum=",a+b)
-print("defference=",a-b)
-print("product",a*b)
-print("quitent=",a/b)
-print("remainder",a%b)
+def permutations(s, current=""):
+    if len(s) == 0:
+        print(current)
+        return
+    for i in range(len(s)):
+        remaining = s[:i] + s[i + 1:]
+        permutations(remaining, current + s[i])
+s = input("Enter a string: ")
+permutations(s)

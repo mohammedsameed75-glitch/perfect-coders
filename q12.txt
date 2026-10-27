@@ -1,4 +1,38 @@
-n = int(input("Enter a number: "))
+def first_occurrence(arr, target):
+    left = 0
+    right = len(arr) - 1
+    result = -1
 
-print("n << 1 =", n << 1)
-print("n >> 1 =", n >> 1)
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            result = mid
+            right = mid - 1
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1\
+    return result
+def last_occurrence(arr, target):
+    left = 0
+    right = len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            result = mid
+            left = mid + 1
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+arr = list(map(int, input("Enter sorted array elements: ").split()))
+target = int(input("Enter target: "))
+first = first_occurrence(arr, target)
+last = last_occurrence(arr, target)
+if first == -1:
+    print("Count:", 0)
+else:
+    print("Count:", last - first + 1)

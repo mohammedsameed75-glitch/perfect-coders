@@ -1,0 +1,8 @@
+def subsequences(s, index, current):
+    if index == len(s):
+        print(current)
+        return
+    subsequences(s, index + 1, current + s[index])
+    subsequences(s, index + 1, current)
+s = input("Enter a string: ")
+subsequences(s, 0, "")

@@ -1,6 +1,9 @@
-n=int(input("enter a number n:"))
-n1=int(input("enter a number n1:"))
-if n>n1:
-    print("n is grater than n1")
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+n = int(input("Enter the position: "))
+if n < 0:
+    print("Enter a non-negative position")
 else:
-    print("n1 is greater than n")
+    print("Fibonacci number:", fibonacci(n))

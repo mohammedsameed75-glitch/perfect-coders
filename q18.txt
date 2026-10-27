@@ -1,6 +1,36 @@
-chact = input("Enter a character:")
-
-if chact in "aeiouAEIOU":
-    print("Vowel")
-else:
-    print("Consonant")
+class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
+    def push(self, x):
+        self.stack.append(x)
+        if not self.min_stack or x <= self.min_stack[-1]:
+            self.min_stack.append(x)
+    def pop(self):
+        if not self.stack:
+            print("Stack is empty")
+            return None
+        value = self.stack.pop()
+        if value == self.min_stack[-1]:
+            self.min_stack.pop()
+        return value
+    def top(self):
+        if not self.stack:
+            print("Stack is empty")
+            return None
+        return self.stack[-1]
+    def get_min(self):
+        if not self.min_stack:
+            print("Stack is empty")
+            return None
+        return self.min_stack[-1]
+s = MinStack()
+s.push(5)
+s.push(3)
+s.push(7)
+s.push(2)
+print("Minimum:", s.get_min())
+print("Top:", s.top())
+s.pop()
+print("Minimum after pop:", s.get_min())
+print("Top after pop:", s.top())

@@ -1,8 +1,29 @@
-n = int(input("Enter a number: "))
-count = 0
+def find_floor(arr, target):
+    left = 0
+    right = len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
 
-while n:
-    count += n & 1
-    n >>= 1
-
-print("Set bits:", count)
+        if arr[mid] <= target:
+            result = arr[mid]
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+def find_ceiling(arr, target):
+    left = 0
+    right = len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] >= target:
+            result = arr[mid]
+            right = mid - 1
+        else:
+            left = mid + 1
+    return result
+arr = list(map(int, input("Enter sorted array elements: ").split()))
+target = int(input("Enter target: "))
+print("Floor:", find_floor(arr, target))
+print("Ceiling:", find_ceiling(arr, target))

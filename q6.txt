@@ -1,0 +1,11 @@
+def is_sorted(arr, n):
+    if n <= 1:
+        return True
+    if arr[n - 1] < arr[n - 2]:
+        return False
+    return is_sorted(arr, n - 1)
+arr = list(map(int, input("Enter array elements: ").split()))
+if is_sorted(arr, len(arr)):
+    print("Array is sorted")
+else:
+    print("Array is not sorted")

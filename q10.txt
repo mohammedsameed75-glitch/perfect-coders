@@ -1,0 +1,14 @@
+def subset_sum(arr, index, target):
+    if target == 0:
+        return True
+    if index == len(arr):
+        return False
+    if subset_sum(arr, index + 1, target - arr[index]):
+        return True
+    return subset_sum(arr, index + 1, target)
+arr = list(map(int, input("Enter array elements: ").split()))
+target = int(input("Enter target sum: "))
+if subset_sum(arr, 0, target):
+    print("Subset with the given sum exists")
+else:
+    print("Subset with the given sum does not exist")
